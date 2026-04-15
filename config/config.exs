@@ -40,7 +40,6 @@ config :domain_outreach, Oban,
   ]
 
 # Google OAuth
-config :domain_outreach, :google_oauth,
 
 # HTTPoison
 config :httpoison,
