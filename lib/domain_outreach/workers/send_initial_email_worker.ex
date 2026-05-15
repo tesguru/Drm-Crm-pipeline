@@ -11,7 +11,8 @@ defmodule DomainOutreach.Workers.SendInitialEmailWorker do
     case HTTPoison.get(
       url,
       [{"Content-Type", "application/json"}],
-      recv_timeout: 30_000
+      recv_timeout: 60_000,   # ← 60s
+    timeout: 65_000 
     ) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         Logger.info("✅ Email #{id} sent! Response: #{body}")

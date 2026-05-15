@@ -10,7 +10,7 @@ config :domain_outreach, DomainOutreach.Repo,
   pool_size: 10
 
 config :domain_outreach,
-  laravel_url: "https://dnwhouse.com"
+  laravel_url: "http://localhost:8000"
 
 config :domain_outreach, DomainOutreachWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}],
