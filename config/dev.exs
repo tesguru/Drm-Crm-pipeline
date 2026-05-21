@@ -4,7 +4,7 @@ config :domain_outreach, DomainOutreach.Repo,
   username: "mac",
   password: "",
   hostname: "localhost",
-  database: "dm-crm",
+  database: "coldmail",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
