@@ -12,7 +12,7 @@ defmodule DomainOutreach.Workers.SendInitialEmailWorker do
       url,
       [{"Content-Type", "application/json"}],
       recv_timeout: 60_000,   # ← 60s
-    timeout: 65_000 
+    timeout: 65_000 ,
       ssl: [verify: :verify_none]
     ) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
