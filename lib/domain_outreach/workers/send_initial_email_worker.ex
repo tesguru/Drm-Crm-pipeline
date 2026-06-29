@@ -12,8 +12,8 @@ defmodule DomainOutreach.Workers.SendInitialEmailWorker do
       url,
       [{"Content-Type", "application/json"}],
       recv_timeout: 60_000,   # ← 60s
-    timeout: 65_000 ,
-      ssl: [verify: :verify_none]
+      timeout: 65_000,
+      ssl: [verify: :verify_peer, cacerts: :public_key.cacerts_get()]
     ) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         Logger.info("✅ Email #{id} sent! Response: #{body}")
